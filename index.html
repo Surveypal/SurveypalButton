@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="surveypal-button-example.css" />
+		<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 		<title>Surveypal Button Test</title>
 	</head>
 	<body>
@@ -11,11 +12,45 @@
 				This is the Surveypal Button test page
 			</h1>
 			<p>
-				You can see the button in the lower left corner.   Here's the code used to create it:
+				You can see the button in lower left corner. Here's the code that creates it:
 			</p>
-		  <pre class="surveypal-button-code">
-		    The code
-		  </pre>
+		  <pre class="surveypal-button-code prettyprint">
+/* Options for the button */
+var options = {
+  sid: "424809885",
+  key: "ocxNB0pSsJFDgcmXEFGpoa9fE5bpcvetfSO9gBH7iFNXXVZqIiTlycm9uUSiwVTo",
+  keep: true,
+  texts: {
+    ENTER: "Click here",
+    LOADING: "Just a moment...",
+    EXIT: "Get back"
+  },
+  type: "flip",
+  location: "left low"
+};
+
+/* Fetch the locally stored script */
+(function(w, t, o) {
+  var s='script',ns='sb',e,n,h=""; e=t.createElement(s);e.async=1; e.src=h+'sb.js'; w[ns]=w[ns]||{};w[ns].o=o;w[ns].h=h;n=t.getElementsByTagName(s)[0];n.parentNode.insertBefore(e,n);
+})(window,document, options);</pre>
 		</div>
+		<script>
+			var options = {
+				sid: "424809885",
+				key: "YCtnvki_3ZewYjc8W3jkkIZ9Zspc8QM6W1gQmw6ZmeJAMkEwvzaFuTBJ8VtLnKDS",
+				keep: true,
+				texts: {
+					ENTER: "Click here",
+					LOADING: "Just a moment...",
+					EXIT: "Get back"
+				},
+				type: "flip",
+				location: "left low"
+			};
+
+			(function(w, t, o) {
+				var s='script',ns='sb',e,n,h=""; e=t.createElement(s);e.async=1; e.src=h+'sb.js'; w[ns]=w[ns]||{};w[ns].o=o;w[ns].h=h;n=t.getElementsByTagName(s)[0];n.parentNode.insertBefore(e,n);
+			})(window,document, options);
+		</script>
 	</body>
 </html>
