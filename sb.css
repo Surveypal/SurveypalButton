@@ -1,0 +1,165 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+.fx {
+    transition: all 0.5s ease;
+}
+
+.sb {
+	border: 1px solid #00ACEE;
+	border-radius: 4px;
+	background: rgb(0, 172, 238);
+
+	position: fixed;
+	box-sizing: border-box;
+	padding: 12px 30px;
+	z-index: 100;
+	min-width: 120px;
+
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: white;
+	text-align: center;
+
+	cursor: pointer;
+	user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+
+.sb:hover, sb:focus {
+	background-color: #33BDF1;
+	border-color: #33BDF1;
+}
+
+.sb.right {
+	right: -3px;
+	left: auto;
+}
+
+.sb.right.high {
+	transform-origin: 100% 0;
+	top: 10%;
+	bottom: auto;
+	transform: rotate(90deg) translateX(100%);
+}
+
+.sb.right.middle {
+	transform-origin: 100% 0;
+	transform: rotate(90deg) translateX(50%);
+	top: 50%;
+	bottom: auto;
+}
+
+.sb.right.low {
+	transform-origin: 100% 0;
+	top: auto;
+	bottom: 10%;
+	transform: rotate(90deg) translateX(50%);
+}
+
+.sb.left {
+	left: -3px;
+	right: auto;
+}
+
+.sb.left.high {
+	transform-origin: 0 0;
+	transform: rotate(-90deg) translateX(-100%);
+	top: 10%;
+	bottom: auto;
+}
+
+.sb.left.middle {
+	transform-origin: 0 0;
+	transform: rotate(-90deg) translateX(-50%);
+	top: 50%;
+	bottom: auto;
+}
+
+.sb.left.low {
+	transform-origin: 0 0;
+	transform: rotate(-90deg) translateX(-50%);
+	top: auto;
+	bottom: 10%;
+}
+
+.sb-slide {
+	top: 0;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+    z-index: 99;
+}
+
+.sb-slide iframe {
+	width: 100%;
+	height: 100%;
+	border: 0;
+    background: white;
+}
+
+.sb-slide.left {
+	left: calc(-1 * 100%);
+}
+
+.sb-slide.left.ready {
+	left: 0;
+
+}
+
+.sb-slide.right {
+	left: calc(1 * 100%);
+}
+
+.sb-slide.right.ready {
+	left: 0;
+}
+
+.sb-flip {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+    z-index: 99;
+	perspective: 2500px;
+}
+
+.sb-flip iframe {
+	width: 100%;
+	height: 100%;
+	border: 0;
+	backface-visibility: hidden;
+	transform-style: preserve-3d;
+	transition-duration: .5s;
+	background-color: white;
+}
+
+.sb-flip.right {
+	perspective-origin: right;
+}
+
+.sb-flip.right iframe {
+    transform: rotate3D(0, 1, 0, -90deg);
+	transform-origin: right;
+}
+
+.sb-flip.right.ready iframe {
+    transform: rotate3D(0, 1, 0, 0deg);
+}
+
+.sb-flip.left {
+	perspective-origin: left;
+}
+
+.sb-flip.left iframe {
+    transform: rotate3D(0, 1, 0, 90deg);
+	transform-origin: left;
+}
+
+.sb-flip.left.ready iframe {
+    transform: rotate3D(0, 1, 0, 0deg);
+}
