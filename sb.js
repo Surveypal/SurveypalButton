@@ -15,6 +15,7 @@
 		LOADING: "Loading",
 		EXIT: "Exit survey"
 	};
+	options.cssname = typeof options.cssname == "string" && options.cssname.length > 0 ? options.cssname : "sb.css";
 
 	// meta array
 	var metas = options.meta || {};
@@ -26,7 +27,7 @@
 	var link = document.createElement("link");
 	link.rel = "stylesheet";
 	link.type = "text/css";
-	link.href = host + "sb.css";
+	link.href = host + options.cssname;
 	document.head.insertBefore(link, document.head.childNodes[0]); // to the top of head to maximize the changes the user can override defaults
 
 	// initializes the button
