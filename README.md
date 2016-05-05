@@ -1,6 +1,6 @@
-# Survey-Button
+# SurveypalButton
 
-A JS library to embed Surveypal to your website.
+A JS library to embed Surveypal to your website. See the button in action: http://surveypal.github.io/SurveypalButton/
 
 ## Installation and usage
 
@@ -12,7 +12,7 @@ var options = {
 };
 
 (function(w, t, o) {
-  var s='script',ns='sb',e,n,h="../lib/"; e=t.createElement(s);e.async=1; e.src=h+'survey-button.js'; w[ns]=w[ns]||{};w[ns].o=o;w[ns].h=h;n=t.getElementsByTagName(s)[0];n.parentNode.insertBefore(e,n);
+  var s='script',ns='sb',e,n,h="../lib/"; e=t.createElement(s);e.async=1; e.src=h+'sb.js'; w[ns]=w[ns]||{};w[ns].o=o;w[ns].h=h;n=t.getElementsByTagName(s)[0];n.parentNode.insertBefore(e,n);
 })(window,document, options);
 </script>
 ```
