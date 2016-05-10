@@ -16,7 +16,7 @@ var options = {
 
 // Fetch the library which will automatically initialize itself
 (function(w, t, o) {
-  var s='script',ns='sb',e,n,h="http://35696292e3548b7626e8-7139975ebb420828147d923433383bf8.r48.cf3.rackcdn.com";
+  var s='script',ns='sb',e,n,h="http://35696292e3548b7626e8-7139975ebb420828147d923433383bf8.r48.cf3.rackcdn.com/";
   e=t.createElement(s);e.async=1; e.src=h+'surveypal-button-1.0.0.js'; w[ns]=w[ns]||{};w[ns].o=o;w[ns].h=h;n=t.getElementsByTagName(s)[0];n.parentNode.insertBefore(e,n);
 })(window,document, options);
 </script>
