@@ -12,7 +12,7 @@ var options = {
 	sid: "425114003",
 	key: "U6rX1UmYu8PEfgVFygqHPZxoiFz2FNV-aiAB8WegqDkcvhlSJ2o1zPLh895ExAYE",
 	cssname: "surveypal-button-1.0.0.css"
-}
+};
 
 // Fetch the library which will automatically initialize itself
 (function(w, t, o) {
