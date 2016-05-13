@@ -12,7 +12,6 @@
 	position: fixed;
 	box-sizing: border-box;
 	padding: 12px 30px;
-	z-index: 100;
 	min-width: 120px;
 
 	font-family: 'Open Sans', sans-serif;
