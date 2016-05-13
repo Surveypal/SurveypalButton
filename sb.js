@@ -42,7 +42,6 @@
 		sb.button = document.createElement("div");
 		sb.button.className = ["sb", options.location].join(" ");
 		sb.button.innerHTML = options.texts.ENTER;
-		sb.button.style.zIndex = options.zindex + 1;
 		document.body.appendChild(sb.button);
 
 		// add click listener
