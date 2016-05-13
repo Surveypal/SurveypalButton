@@ -16,6 +16,7 @@
 		EXIT: "Exit survey"
 	};
 	options.cssname = typeof options.cssname == "string" && options.cssname.length > 0 ? options.cssname : "sb.css";
+	options.zindex = typeof options.zindex == "number" ? options.zindex : 99;
 
 	// meta array
 	var metas = options.meta || {};
@@ -59,6 +60,7 @@
 		// create container
 		var slide = document.createElement("div");
 		slide.className = "sb-flip " + className;
+		slide.style.zIndex = options.zindex;
 
 		var iframe = document.createElement("iframe");
 		iframe.className = "fx";
@@ -91,6 +93,8 @@
 		// create container
 		var slide = document.createElement("div");
 		slide.className = "sb-slide " + className;
+		slide.style.zIndex = options.zindex;
+		
 		var iframe = document.createElement("iframe");
 		iframe.onload = function() {
 			// hide the button
