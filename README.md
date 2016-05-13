@@ -50,6 +50,7 @@ var options = {
 * source = Surveypal compatible display string
 * name = If the source is display, then the display name can be given
 * metas = A json array of json objects like { key: "firstname", value: "John" }. Will send additional meta information to Surveypal.
+* zindex = Specify css z-index for the "flip" and "slide" style overlays. Defaults to 99.
 * texts = Contains labels for the button. A json object with the following keys:
   * ENTER = defaults to "Open survey"
   * LOADING = defaults to "Loading"
