@@ -40,8 +40,8 @@ var options = {
 ## Configuration options
 
 * init = will define if the button is shown automatically. If `false` you must use `window.sb.init()` to show the button.
-* sid = Id of the survey [REQUIRED]
-* key = Key hash of the survey [REQUIRED]
+* sid = Id of the survey [REQUIRED] [Here's how to find it](http://surveypal.github.io/SurveypalButton/key_and_id_instructions.html)
+* key = Key hash of the survey [REQUIRED] [Here's how to find it](http://surveypal.github.io/SurveypalButton/key_and_id_instructions.html)
 * cssname = Name of the the css related to the library. Defaults to "sb.css".
 * type = Defines the style of animation used to display the survey. Options are "slide", "flip" or "window". Defaults to "window".
 * remember = If true, this survey (and the button) won't be shown to the this user anymore
