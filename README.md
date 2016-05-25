@@ -11,12 +11,13 @@ The easiest way to use the library is to fetch it directly from Surveypal cdn:
 var options = {
 	sid: "425114003",
 	key: "U6rX1UmYu8PEfgVFygqHPZxoiFz2FNV-aiAB8WegqDkcvhlSJ2o1zPLh895ExAYE",
-	cssname: "surveypal-button-1.0.0.css"
+	cssname: "surveypal-button-1.0.0.css",
+	type: "flip"
 };
 
 // Fetch the library which will automatically initialize itself
 (function(w, t, o) {
-  var s='script',ns='sb',e,n,h="http://35696292e3548b7626e8-7139975ebb420828147d923433383bf8.r48.cf3.rackcdn.com/";
+  var s='script',ns='sb',e,n,h="https://b0817826f4686949b611-7139975ebb420828147d923433383bf8.ssl.cf3.rackcdn.com/";
   e=t.createElement(s);e.async=1; e.src=h+'surveypal-button-1.0.0.js'; w[ns]=w[ns]||{};w[ns].o=o;w[ns].h=h;n=t.getElementsByTagName(s)[0];n.parentNode.insertBefore(e,n);
 })(window,document, options);
 </script>
@@ -40,8 +41,8 @@ var options = {
 ## Configuration options
 
 * init = will define if the button is shown automatically. If `false` you must use `window.sb.init()` to show the button.
-* sid = Id of the survey [REQUIRED]
-* key = Key hash of the survey [REQUIRED]
+* sid = Id of the survey [REQUIRED] [Here's how to find it](http://surveypal.github.io/SurveypalButton/key_and_id_instructions.html)
+* key = Key hash of the survey [REQUIRED] [Here's how to find it](http://surveypal.github.io/SurveypalButton/key_and_id_instructions.html)
 * cssname = Name of the the css related to the library. Defaults to "sb.css".
 * type = Defines the style of animation used to display the survey. Options are "slide", "flip" or "window". Defaults to "window".
 * remember = If true, this survey (and the button) won't be shown to the this user anymore
