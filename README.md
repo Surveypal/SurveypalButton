@@ -40,21 +40,24 @@ var options = {
 
 ## Configuration options
 
-* init = will define if the button is shown automatically. If `false` you must use `window.sb.init()` to show the button.
 * sid = Id of the survey [REQUIRED] [Here's how to find it](http://surveypal.github.io/SurveypalButton/key_and_id_instructions.html)
 * key = Key hash of the survey [REQUIRED] [Here's how to find it](http://surveypal.github.io/SurveypalButton/key_and_id_instructions.html)
-* cssname = Name of the the css related to the library. Defaults to "sb.css".
-* type = Defines the style of animation used to display the survey. Options are "slide", "flip" or "window". Defaults to "window".
-* remember = If true, this survey (and the button) won't be shown to the this user anymore
-* location = The location of the button, "left/right high/middle/low", defaults to "right low"
-* keep = If true the button is available after the survey is closed and re-answering is possible
-* source = Surveypal compatible display string
-* name = If the source is display, then the display name can be given
-* metas = A json array of json objects like { key: "firstname", value: "John" }. Will send additional meta information to Surveypal.
+___
+* cssname = Name of the the css related to the library. Defaults to `sb.css`.
+* init = Will define if the button is shown automatically. If `false` you must use `window.sb.init()` to show the button. Defaults to `true`.
+* keep = If `true`, the button is available after the survey is closed and re-answering is possible. Defaults to `true`.
+* location = The location of the button, `left/right high/middle/low`. Defaults to `right low`.
+* remember = If `true`, this survey (and the button) will be only shown once to the user. E.g. if user refreshes the page, the button will be hidden. Defaults to `false`.
 * texts = Contains labels for the button. A json object with the following keys:
-  * ENTER = defaults to "Open survey"
-  * LOADING = defaults to "Loading"
-  * EXIT = defaults to "Exit survey"
+  * ENTER = defaults to `Open survey`
+  * LOADING = defaults to `Loading`
+  * EXIT = defaults to `Exit survey`
+* type = Defines the style of animation used to display the survey. Options are `slide`, `flip` or `window`. Defaults to `window`.
+___
+* answerData = A json object containing predefined answer data for the first page of the survey. Example: `{"p0e1" : 0, "p0e1" : "Need more cookies!"}`. [Here's a more detailed explanation how to use this feature.](http://surveypal.github.io/SurveypalButton/answerData_instructions.html)
+* metas = A json array of json objects like `{ key: "firstname", value: "John" }`. Will send additional meta information to Surveypal. No default value.
+* name = If the source is `display`, then the display name can be given. No default value.
+* source = Surveypal compatible source string. No default value.
 
 ## API
 
