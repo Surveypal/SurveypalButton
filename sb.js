@@ -159,9 +159,10 @@
 
 	function buildAnswerDataUrlStr(answerDataMap)
 	{
-		return Object.keys(answerDataMap).reduce(function(accumulator, key){
-			return accumulator + "?" + key + "=" + String(answerDataMap[key]) + "&";
+		var str = Object.keys(answerDataMap).reduce(function(accumulator, key){
+			return accumulator + "&" + key + "=" + String(answerDataMap[key]);
 		}, "");
+		return encodeURIComponent(str);
 	}
 
 	function enterSurvey() {
