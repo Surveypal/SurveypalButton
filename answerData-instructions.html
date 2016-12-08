@@ -39,12 +39,16 @@ var options = {
 	<p>
 		In the example keys <code>p0e1, p0e2, p0e3</code> and <code>p0e4</code> represent questions in the survey.
 		The values <code>0, 0, 2, 4</code> and <code>"Predefined text from answerData option"</code> are answers passed to those questions.
-		You can see how it works by clicking the button on the lower left corner of the screen.
+			You can see how it works by clicking the button on the lower left corner of the screen.
+	</p>
+
+	<p>
+		The data passed can be updated any time by using the <code>window.sb.option()</code> e.g. <code>window.sb.option("answerData", {"p0e1": "New answer data is here"})</code>
 	</p>
 
 	<p>
 	There can be two kind of values passed to the answer: <strong>numeric indexes</strong> and <strong>string values</strong>.
-	Indexes are integers that tell which option is selected for a question. First option has index 0, second 1, third 2 etc. Indexes work with
+	Indexes are integers that tell which option is selected for a question. First option has index 0, second 1, third 2 etc. <strong>Indexes</strong> work with
 	</p>
 	<ul>
 		<li>single choice</li>
