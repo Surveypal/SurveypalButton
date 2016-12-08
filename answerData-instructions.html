@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="surveypal-button-example.css" />
+		<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+		<title>How to use answerData</title>
+	</head>
+	<body>
+<div id="surveypal-button-container">
+	<h1 class="surveypal-button-header">
+		How to use <code>answerData</code> option with SurveypalButton
+	</h1>
+	<pre class="surveypal-button-code prettyprint">
+// Build options for the library
+var options = {
+	sid: "498195491",
+	key: "-N-gHPW21l3Gtol9svg_r-D9jeNtcjCPETkyq8lsoSjRlltDQQhHgRZDHjrJcjIM",
+	location: "left low",
+	cssname: "surveypal-button-1.0.1.css",
+	type: "slide",
+	answerData: {
+		"p0e1": "Predefined text from answerData option",
+		"p0e2": 0,
+		"p0e3": 2,
+		"p0e4": 4
+	}
+};
+
+// Fetch library from Surveypal cdn
+(function(w, t, o) {
+	var s='script',ns='sb',e,n;
+	var h="https://b0817826f4686949b611-7139975ebb420828147d923433383bf8.ssl.cf3.rackcdn.com/";
+	e=t.createElement(s);e.async=1; e.src=h+'surveypal-button-1.0.1.js';
+	w[ns]=w[ns]||{};w[ns].o=o;w[ns].h=h;
+	n=t.getElementsByTagName(s)[0];n.parentNode.insertBefore(e,n);
+})(window,document, options);</pre>
+
+	<p>
+		In the example keys <code>p0e1, p0e2, p0e3</code> and <code>p0e4</code> represent questions in the survey.
+		The values <code>0, 0, 2, 4</code> and <code>"Predefined text from answerData option"</code> are answers passed to those questions.
+		You can see how it works by clicking the button on the lower left corner of the screen.
+	</p>
+
+	<p>
+	There can be two kind of values passed to the answer: <strong>numeric indexes</strong> and <strong>string values</strong>.
+	Indexes are integers that tell which option is selected for a question. First option has index 0, second 1, third 2 etc. Indexes work with
+	</p>
+	<ul>
+		<li>single choice</li>
+		<li>mutiple choice</li>
+		<li>dropdown menu</li>
+		<li>satisfaction</li>
+		<li>number scale</li>
+		<li>and image selection elements.</li>
+	</ul>
+	<p><strong>String values</strong>
+		work with open questions.
+	</p>
+	<p>
+		The key defines the element for which the value is passed to. In <code>p0e1</code> part <code>p0</code> signifies page number (starting from 0). Since the
+		feature currently supports only passing data to first page, the first part has to be <code>p0</code> every time.
+	</p>
+
+	<p>
+		Part <code>e1</code> tells the element index (starting from 0).
+		All the elements on the page, even static ones, must be taken into account when finding out what index an element has. In the the example, the static
+		text on the top of the page has element index 0, open question has 1, single choice 2, and so on.
+	</p>
+
+	<p>
+		<strong>NB!</strong> Invalid element identifiers, or identifiers belonging to another survey page, will cause the survey not to load.</p>
+	</p>
+
+	<p>
+		Element identifier can also be checked from the DOM directly. It is the attribute called "elementname":
+	</p>
+	<a href="img/how_to_find_out_element_id.png"><img src="img/how_to_find_out_element_id.png" /></a>
+</div>
+<script type="text/javascript">
+	// Build options for the library
+	var options = {
+		sid: "498195491",
+		key: "-N-gHPW21l3Gtol9svg_r-D9jeNtcjCPETkyq8lsoSjRlltDQQhHgRZDHjrJcjIM",
+		location: "left low",
+		cssname: "surveypal-button-1.0.1.css",
+		type: "slide",
+		answerData: {
+			"p0e1": "Predefined text from answerData option",
+			"p0e2": 0,
+			"p0e3": 2,
+			"p0e4": 4
+		}
+	};
+
+	// Fetch library from Surveypal cdn
+	(function(w, t, o) {
+		var s='script',ns='sb',e,n;
+		var h="https://b0817826f4686949b611-7139975ebb420828147d923433383bf8.ssl.cf3.rackcdn.com/";
+		e=t.createElement(s);e.async=1; e.src=h+'surveypal-button-1.0.1.js';
+		w[ns]=w[ns]||{};w[ns].o=o;w[ns].h=h;
+		n=t.getElementsByTagName(s)[0];n.parentNode.insertBefore(e,n);
+	})(window,document, options);
+</script>
+	</body>
+</html>

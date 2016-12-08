@@ -3,16 +3,35 @@
 {
 	font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
 	max-width: 800px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 100px;
+	margin: 100px auto;
 	text-align: center;
+	font-size: 1.1em;
 }
-h1{
+#surveypal-button-container p, #surveypal-button-container ul
+{
+	text-align: left;
+}
+h1
+{
 	font-weight: 300;
 	font-size: 1.8em;
 }
+code
+{
+	font-size: 1.2em;
+	color: #006699;
+}
 
+img
+{
+	max-width: 100%;
+	padding: 5px;
+	border: 2px solid #65CDEE;
+}
+img:hover
+{
+	border: 2px solid #00ACEE;
+}
 .surveypal-button-code
 {
 	text-align: left;
