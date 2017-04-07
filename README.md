@@ -55,7 +55,7 @@ var options = {
 * type = Defines the style of animation used to display the survey. Options are `slide`, `flip` or `window`. Defaults to `window`.
 
 * answerData = A json object containing predefined answer data for the first page of the survey. Example: `{"p0e1" : 0, "p0e1" : "Need more cookies!"}`. No default value. [Here's a more detailed explanation how to use this feature.](http://surveypal.github.io/SurveypalButton/answerData-instructions.html)
-* metas = A json array of json objects like `{ key: "firstname", value: "John" }`. Will send additional meta information to Surveypal. No default value.
+* meta = A json object with key-value pairs: `{ 'source_domain': 'www.foodomain.com', 'source_page': 'front_page' }`. Will send additional meta information to Surveypal. No default value.
 * name = If the source is `display`, then the display name can be given. No default value.
 * source = Surveypal compatible source string. No default value.
 
