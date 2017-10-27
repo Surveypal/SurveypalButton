@@ -10,12 +10,12 @@
 	options.type = options.type || "window";
 	options.remember = typeof options.remember == "boolean" ? options.remember : false;
 	options.keep = typeof options.keep == "boolean" ? options.keep : true;
-	options.texts = options.texts || {
+	options.texts = options.texts || {
 		ENTER: "Open survey",
 		LOADING: "Loading",
 		EXIT: "Exit survey"
 	};
-	options.answerData = options.answerData || {};
+	options.answerData = options.answerData || {};
 	options.cssname = typeof options.cssname == "string" && options.cssname.length > 0 ? options.cssname : "sb.css";
 
 	// meta array
@@ -178,7 +178,7 @@
 		if(keys.length > 0) {
 			url = url.replace("/form", "/form/ext");
 			var arr = [];
-			for(var i = 0; i < keys.length; i++ ) {
+			for(var i = 0; i < keys.length; i++ ) {
 				var key = keys[i];
 				var o = {};
 				o.key = key;
@@ -246,7 +246,7 @@
 	sb.meta = meta;
 
 	// start listening for postmessages
-	window.addEventListener("message", function(event) {
+	window.addEventListener("message", function(event) {
 		var origin = event.origin || event.originalEvent.origin;
 
 		// security check, only accept from surveypal.com
