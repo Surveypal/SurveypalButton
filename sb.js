@@ -135,7 +135,7 @@
 		if (options.scale !== 1)
 		{
 			var scale = options.scale;
-			var origin = options.location.indexOf("right") !== -1 ? "top right" : "top left";
+			var origin = options.location.indexOf("right") !== -1 ? "right" : "left";
 			domElem.style.transform = "scale(" + scale +", " + scale + ")";
 			domElem.style.transformOrigin = origin;
 		}
