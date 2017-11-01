@@ -23,10 +23,10 @@
 
 	cursor: pointer;
 	user-select: none;
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    -o-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
 }
 
 .sb:hover, sb:focus {
@@ -91,14 +91,14 @@
 	position: fixed;
 	width: 100%;
 	height: 100%;
-    z-index: 99;
+	z-index: 99;
 }
 
 .sb-slide iframe {
 	width: 100%;
 	height: 100%;
 	border: 0;
-    background: white;
+	background: white;
 }
 
 .sb-slide.left {
@@ -111,20 +111,19 @@
 }
 
 .sb-slide.right {
-	left: calc(1 * 100%);
+	right: calc(-1 * 100%);
 }
 
 .sb-slide.right.ready {
-	left: 0;
+	right: 0;
 }
 
 .sb-flip {
 	top: 0;
-	left: 0;
 	width: 100%;
 	height: 100%;
 	position: fixed;
-    z-index: 99;
+	z-index: 99;
 	perspective: 2500px;
 }
 
@@ -139,27 +138,29 @@
 }
 
 .sb-flip.right {
+	right: 0;
 	perspective-origin: right;
 }
 
 .sb-flip.right iframe {
-    transform: rotate3D(0, 1, 0, -90deg);
+	transform: rotate3D(0, 1, 0, -90deg);
 	transform-origin: right;
 }
 
 .sb-flip.right.ready iframe {
-    transform: rotate3D(0, 1, 0, 0deg);
+	transform: rotate3D(0, 1, 0, 0deg);
 }
 
 .sb-flip.left {
+	left: 0;
 	perspective-origin: left;
 }
 
 .sb-flip.left iframe {
-    transform: rotate3D(0, 1, 0, 90deg);
+	transform: rotate3D(0, 1, 0, 90deg);
 	transform-origin: left;
 }
 
 .sb-flip.left.ready iframe {
-    transform: rotate3D(0, 1, 0, 0deg);
+	transform: rotate3D(0, 1, 0, 0deg);
 }

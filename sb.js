@@ -5,18 +5,22 @@
 	
 	// get options to a local scope
 	var options = sb.o;
-	options.init = typeof options.init == "boolean" ? options.init : true;
+	options.init = typeof options.init === "boolean" ? options.init : true;
 	options.location = options.location || "right low";
-	options.type = options.type || "window";
-	options.remember = typeof options.remember == "boolean" ? options.remember : false;
-	options.keep = typeof options.keep == "boolean" ? options.keep : true;
+	options.type = options.type || "slide";
+	options.remember = typeof options.remember === "boolean" ? options.remember : false;
+	options.keep = typeof options.keep === "boolean" ? options.keep : true;
 	options.texts = options.texts || {
 		ENTER: "Open survey",
 		LOADING: "Loading",
 		EXIT: "Exit survey"
 	};
 	options.answerData = options.answerData || {};
-	options.cssname = typeof options.cssname == "string" && options.cssname.length > 0 ? options.cssname : "sb.css";
+	options.cssname = typeof options.cssname === "string" && options.cssname.length > 0 ? options.cssname : "sb.css";
+	options.height = typeof options.height === "number" && options.height <= 1 && options.height > 0 ? options.height : 1;
+	options.width = typeof options.width === "number" && options.width <= 1 && options.width > 0 ? options.width : 1;
+	options.scale = typeof options.scale === "number" && options.scale <= 1 && options.scale > 0 ? options.scale : 1;
+	options.top = typeof options.top === "number" && options.top <= 1 && options.top > 0 ? options.top : null;
 
 	// meta array
 	var metas = options.meta || {};
@@ -48,7 +52,7 @@
 		sb.button.addEventListener("click", function() {
     		trigger();
 		});
-	};
+	}
 	
 	function openFlip(url) {
 		// direction class
@@ -59,6 +63,7 @@
 
 		// create container
 		var slide = document.createElement("div");
+		addOptionStyles(slide, options);
 		slide.className = "sb-flip " + className;
 
 		var iframe = document.createElement("iframe");
@@ -79,7 +84,7 @@
 		slide.appendChild(iframe);
 		document.body.appendChild(slide);
 		sb.handle = slide;
-	};
+	}
 
 	// slides the survey open
 	function openSlide(url) {
@@ -91,6 +96,7 @@
 
 		// create container
 		var slide = document.createElement("div");
+		addOptionStyles(slide, options);
 		slide.className = "sb-slide " + className;
 		var iframe = document.createElement("iframe");
 		iframe.onload = function() {
@@ -109,14 +115,54 @@
 		slide.appendChild(iframe);
 		document.body.appendChild(slide);
 		sb.handle = slide;
-	};
+	}
 
 	function openWindow(url) {
 		// hide the button
 		sb.button.parentNode.removeChild(sb.button);
 		sb.button = null;
 		sb.handle = window.open(url);
-	};
+	}
+
+	function addOptionStyles(domElement, options)
+	{
+		addScaleStyles(domElement, options);
+		addSizeStyles(domElement, options);
+		addTopStyles(domElement, options);
+	}
+
+	function addScaleStyles(domElem, options) {
+		if (options.scale !== 1)
+		{
+			var scale = options.scale;
+			var origin = options.location.indexOf("right") !== -1 ? "top right" : "top left";
+			domElem.style.transform = "scale(" + scale +", " + scale + ")";
+			domElem.style.transformOrigin = origin;
+		}
+	}
+
+	function addSizeStyles(domElem, options) {
+		if (options.width !== 1)
+		{
+			var widthPercentage = String(options.width * 100) + "%";
+			domElem.style.width = widthPercentage;
+		}
+		if (options.height !== 1)
+		{
+			var heightPercentage = String(options.height * 100) + "%";
+			var topPercentage = String(((1 - options.height)/2) * 100) + "%";
+			domElem.style.height = heightPercentage;
+			domElem.style.top = topPercentage;
+		}
+	}
+
+	function addTopStyles(domElem, options) {
+		if (options.top)
+		{
+			var percentage = String(options.top * 100) + "%";
+			domElem.style.top = percentage;
+		}
+	}
 
 	// opens the survey
 	function trigger() {
@@ -127,7 +173,7 @@
 				enterSurvey();
 			}
 		}
-	};
+	}
 
 	function exitSurvey() {
 		switch(options.type) {
@@ -155,7 +201,7 @@
 				break;
 		}		
 		sb.handle = null;
-	};
+	}
 
 	function buildAnswerDataUrlStr(answerDataMap)
 	{
@@ -218,17 +264,17 @@
 			var cookieString = "sb%1=1; expires=%2".replace("%1", options.sid).replace("%2", d.toUTCString());
 			document.cookie = cookieString;
 		}
-	};
+	}
 
 	// rewrite settings
 	function option(key, value) {
 		options[key] = value;
-	};
+	}
 
 	// add meta
 	function meta(key, value) {
 		metas[key] = value;
-	};
+	}
 
 	// expose the init for global scope
 	sb.init = init;
