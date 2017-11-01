@@ -55,44 +55,44 @@ var options = {
 
 ### Survey identifiers [REQUIRED]
 
-| Name | Description | Value | Example |
-| ---  | --- | --- | --- | --- |
-| sid  | [Id](http://surveypal.github.io/SurveypalButton/key_and_id_instructions.html) of the survey that's shown | string | `"425114003"` |
-| key  | [Key hash](http://surveypal.github.io/SurveypalButton/key_and_id_instructions.html) of the survey that's shown | string | `"U6rX1UmYu8PEfgVFygqHPZxoiFz2FNVbaiAB8WegqDkcvhlSJ2o1zPLh895ExAYE"` |
+| Name | Description | Value | Example |
+| --- | --- | --- | --- |
+| sid | [Id](http://surveypal.github.io/SurveypalButton/key_and_id_instructions.html) of the survey that's shown | string | `"425114003"` |
+| key | [Key hash](http://surveypal.github.io/SurveypalButton/key_and_id_instructions.html) of the survey that's shown | string | `"U6rX1UmYu8PEfgVFygqHPZxoiFz2FNVbaiAB8WegqDkcvhlSJ2o1zPLh895ExAYE"` |
 
 ### Answer options
 
-| Name | Description | Value | Example |
-| ---  | --- | --- | --- |
-| answerData | [Predefined answer data](http://surveypal.github.io/SurveypalButton/answerData-instructions.html) for the first page of the survey | object | <code>{p0e0:&nbsp;0, p0e1:&nbsp;"Need_more_cookies!"}</code> |
-| meta | Metadata added to each response | object | <code>{source_page:&nbsp;"front_page"}</code> |
-| source | Surveypal compatible source string | string | `display` |
-| name | If source is `display`, name can be given to further specify the source | string | `myDisplay1` |
+| Name | Description | Value | Example |
+| --- | --- | --- | --- |
+| answerData | [Predefined answer data](http://surveypal.github.io/SurveypalButton/answerData-instructions.html) for the first page of the survey | object | <code>{p0e0:&nbsp;0, p0e1:&nbsp;"Need_more_cookies!"}</code> |
+| meta | Metadata added to each response | object | <code>{source_page:&nbsp;"front_page"}</code> |
+| source | Surveypal compatible source string | string | `display` |
+| name | If source is `display`, name can be given to further specify the source | string | `myDisplay1` |
 
 ### Customizing the button
 
-| Name | Description | Value | Example |
-| ---  | --- | --- | --- |
-| init | Defines if the button is shown automatically | boolean | `true` (default) |
-| keep | Defines if the button remains visible after answering the survey | boolean | `true` (default) |
-| location | Location of the button | `left high`, `left middle`, `left low`, `right high`, `right middle`, `right low` | `right low` (default) |
-| remember | Is the button hidden when survey has been opened once, and user refreshes the page | boolean | `false` (default) |
-| texts | Text labels for the button | object | `{ENTER: "Open survey", LOADING: "Loading", EXIT: "Exit survey"}`(default) |
+| Name | Description | Value | Example |
+| --- | --- | --- | --- |
+| init | Defines if the button is shown automatically | boolean | `true` (default) |
+| keep | Defines if the button remains visible after answering the survey | boolean | `true` (default) |
+| location | Location of the button | `left high`, `left middle`, `left low`, `right high`, `right middle`, `right low` | `right low` (default) |
+| remember | Is the button hidden when survey has been opened once, and user refreshes the page | boolean | `false` (default) |
+| texts | Text labels for the button | object | `{ENTER: "Open survey", LOADING: "Loading", EXIT: "Exit survey"}`(default) |
   
 ### Customizing the survey overlay
 
-| Name | Description | Value | Example |
-| ---  | --- | --- | --- |
-| height | Relative height of the survey overlay | number (between 0 and 1) | `0.5` = half of the viewport |
-| top | Relative vertical position of the survey in the viewport | number (between 0 and 1) | `0.5` = position the top border of the overlay in the middle of the screen |
-| type | The style of animation used to display the survey |`slide`, `flip`, `window` | `window` (default) |
-| width | Relative width of the survey overlay | number (between 0 and 1) | `0.75` = 75% of the viewport width |
+| Name | Description | Value | Example |
+| --- | --- | --- | --- |
+| height | Relative height of the survey overlay | number (between 0 and 1) | `0.5` = half of the viewport |
+| top | Relative vertical position of the survey in the viewport | number (between 0 and 1) | `0.5` = position the top border of the overlay in the middle of the screen |
+| type | The style of animation used to display the survey | `slide`, `flip`, `window` | `window` (default) |
+| width | Relative width of the survey overlay | number (between 0 and 1) | `0.75` = 75% of the viewport width |
 
 ### Miscellaneous options
 
-| Name | Description | Value | Example |
-| ---  | --- | --- | --- |
-| cssname | Name of the the css related to the library | string | `sb.css` (default) |
+| Name | Description | Value | Example |
+| --- | --- | --- | --- |
+| cssname | Name of the the css related to the library | string | `sb.css` (default) |
 
 ## API
 
