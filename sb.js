@@ -20,7 +20,7 @@
 	options.height = typeof options.height === "number" && options.height <= 1 && options.height > 0 ? options.height : 1;
 	options.width = typeof options.width === "number" && options.width <= 1 && options.width > 0 ? options.width : 1;
 	options.scale = typeof options.scale === "number" && options.scale <= 1 && options.scale > 0 ? options.scale : 1;
-	options.top = typeof options.top === "number" && options.top <= 1 && options.top > 0 ? options.top : null;
+	options.top = typeof options.top === "number" && options.top <= 1 && options.top >= 0 ? options.top : null;
 
 	// meta array
 	var metas = options.meta || {};
@@ -157,7 +157,7 @@
 	}
 
 	function addTopStyles(domElem, options) {
-		if (options.top)
+		if (options.top !== null && options.top !== undefined)
 		{
 			var percentage = String(options.top * 100) + "%";
 			domElem.style.top = percentage;
