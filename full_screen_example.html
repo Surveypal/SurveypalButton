@@ -4,41 +4,24 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="surveypal-button-example.css" />
 		<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-		<title>Surveypal Button Test</title>
+		<title>Surveypal Button Fullscreen Test</title>
 	</head>
 	<body>
 		<div id="surveypal-button-container">
 			<h1 class="surveypal-button-header">
-				Surveypal Button in action
+				Fullscreen survey overlay
 			</h1>
 			<p>
 				You can see the button on the left. Here's the code that creates it:
 			</p>
-			<pre class="surveypal-button-code prettyprint">
+		  <pre class="surveypal-button-code prettyprint">
 // Build options for the library
 var options = {
-	// Survey identifiers
-	sid: "628094457",
-	key: "L_9wycv28pdzajCHMCEzUNQeBRzXYfGYvy4mCuXbK4Z5VT7YpFLN6Q5HYW37zgxD",
-
-	// Location of the button
-	location: "left low",
-
-	// Texts for the button
-	texts: {
-		ENTER: "Click here",
-		LOADING: "Survey opening...",
-		EXIT: "Close"
-	}
-
-	// Custom css file name
-	cssname: "surveypal-button-1.0.2.css",
-
-	// Options for the survey overlay
-	type: "slide",
-	height: 0.55,
-	width: 0.5,
-	scale: 0.65
+	sid: "425114003",
+	key: "U6rX1UmYu8PEfgVFygqHPZxoiFz2FNV-aiAB8WegqDkcvhlSJ2o1zPLh895ExAYE",
+	type: "flip",
+	location: "left middle",
+	cssname: "surveypal-button-1.0.2.css"
 };
 
 // Fetch library from Surveypal cdn
@@ -56,19 +39,11 @@ var options = {
 		</div>
 		<script>
 			var options = {
-				sid: "628094457",
-				key: "L_9wycv28pdzajCHMCEzUNQeBRzXYfGYvy4mCuXbK4Z5VT7YpFLN6Q5HYW37zgxD",
-				type: "slide",
+				sid: "425114003",
+				key: "U6rX1UmYu8PEfgVFygqHPZxoiFz2FNV-aiAB8WegqDkcvhlSJ2o1zPLh895ExAYE",
+				type: "flip",
 				location: "left middle",
-				cssname: "surveypal-button-1.0.2.css",
-				height: 0.55,
-				width: 0.55,
-				scale: 0.60,
-				texts: {
-					ENTER: "Click here!",
-					LOADING: "Survey opening...",
-					EXIT: "Close survey"
-				}
+				cssname: "surveypal-button-1.0.2.css"
 			};
 
 			(function(w, t, o) {
