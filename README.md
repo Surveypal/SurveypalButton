@@ -1,6 +1,15 @@
 # SurveypalButton
 
-A JS library to embed Surveypal to your website. See the button in action: http://surveypal.github.io/SurveypalButton/
+A JS library to embed Surveypal to your website. [See the button in action.](http://surveypal.github.io/SurveypalButton/)
+
+Other examples: 
+
+[Customizing the size and position of the survey.](http://surveypal.github.io/SurveypalButton/size_and_top_example.html)
+
+[Scaling the content of the survey.](http://surveypal.github.io/SurveypalButton/scale_example.html)
+
+[Full screen survey.](http://surveypal.github.io/SurveypalButton/full_screen_example.html)
+
 
 ## Installation and usage
 
