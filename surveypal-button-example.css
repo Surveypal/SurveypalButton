@@ -42,3 +42,15 @@ img:hover
 	padding: 10px;
 	white-space: pre-wrap;
 }
+
+#codeArea {
+	/*display: none; */
+}
+
+#toggleLink {
+	color: #33BDF1;
+	text-decoration: underline;
+}
+#toggleLink:hover {
+	cursor: pointer;
+}

@@ -12,9 +12,9 @@
 				Surveypal Button in action
 			</h1>
 			<p>
-				You can see the button on the left. Here's the code that creates it:
+				You can see the button on the left. <span id="toggleLink" onclick="toggleCode()">Click here to see the code that creates it:</span>
 			</p>
-			<pre class="surveypal-button-code prettyprint">
+			<pre id="codeArea"  style="display: none" class="surveypal-button-code prettyprint">
 // Build options for the library
 var options = {
 	// Survey identifiers
@@ -83,6 +83,15 @@ var options = {
 				n=t.getElementsByTagName(s)[0];
 				n.parentNode.insertBefore(e,n);
 			})(window, document, options);
+
+			function toggleCode() {
+				var code = document.getElementById("codeArea");
+				if (code.style.display === "none") {
+					code.style.display = "block";
+				} else {
+					code.style.display = "none";
+				}
+			}
 		</script>
 	</body>
 </html>
