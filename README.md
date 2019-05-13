@@ -25,7 +25,7 @@ var options = {
 
 // Fetch the library which will automatically initialize itself
 (function(w, t, o) {
-  var s='script',ns='sb',e,n,h="https://b0817826f4686949b611-7139975ebb420828147d923433383bf8.ssl.cf3.rackcdn.com/";
+  var s='script',ns='sb',e,n,h="https://srvpleu1data1.blob.core.windows.net/code/";
   e=t.createElement(s);
   e.async=1; 
   e.src=h+'surveypal-button-1.0.2.js'; 
