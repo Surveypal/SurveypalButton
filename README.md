@@ -75,6 +75,7 @@ var options = {
 | --- | --- | --- | --- |
 | answerData | [Predefined answer data](http://surveypal.github.io/SurveypalButton/answerData-instructions.html) for the first page of the survey | object | <code>{p0e0:&nbsp;0, p0e1:&nbsp;"Need_more_cookies!"}</code> |
 | meta | Metadata added to each response | object | <code>{source_page:&nbsp;"front_page"}</code> |
+| language | Response language | string | `English%20(US)` |
 | source | Surveypal compatible source string | string | `display` |
 | name | If source is `display`, name can be given to further specify the source | string | `myDisplay1` |
 
