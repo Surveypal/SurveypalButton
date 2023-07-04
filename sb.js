@@ -241,7 +241,12 @@
 				url = url + "&name=" + options.name;
 			}
 		}
-
+		
+		// add language, if defined
+		if(options.language) {
+			url = url + "&language=" + options.language;
+		}
+		
 		// show widget
 		console.info(url);
 		switch(options.type) {
