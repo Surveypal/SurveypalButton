@@ -115,15 +115,44 @@ Api methods can be used globally through the `window.sb` object. E.g. `window.sb
 
 ## Autoclose survey
 
-By placing this script to your survey form the survey will be closed 1 sec after the survey is completed.
+If you want to close survey after it's completed then you can add first code to your survey and second code to your webpage. After this survey popup will be closed after 1 second.
 
+Add this to survey (Settings > Snippets)
 ```javascript
 <script type="text/javascript">
-	if(location.href.indexOf("&_submit") != -1) {
+var page = SurveypalAPI.getPageType();
+if(page == "thank-you") {
+
+  try {
+	var postObject = JSON.stringify({
+		event: 'formSubmit'
+	});
+	window.parent.postMessage(postObject, '*');
+  } catch(e) {
+	window.console && window.console.log(e);
+  }
+
+}
+</script>
+```
+
+Add this to your webpage
+```javascript
+<script type="text/javascript">
+window.addEventListener('message', function (e) {
+  // Get the sent data
+  
+  if (e.origin === "https://q.surveypal.com") {
+    var data = JSON.parse(e.data);	
+	console.log('event: ' + data.event);
+	if (data.event === 'formSubmit') {
 		setTimeout(function() {
-			window.parent.postMessage("exit", '*');
+			window.sb.trigger();
 		}, 1000);
 	}
+  }
+
+});
 </script>
 ```
 
