@@ -28,7 +28,7 @@ var options = {
   var s='script',ns='sb',e,n,h="https://srvpleu1data1.blob.core.windows.net/code/";
   e=t.createElement(s);
   e.async=1; 
-  e.src=h+'surveypal-button-1.0.2.js'; 
+  e.src=h+'surveypal-button-1.0.3.js'; 
   w[ns]=w[ns]||{};
   w[ns].o=o;
   w[ns].h=h;
