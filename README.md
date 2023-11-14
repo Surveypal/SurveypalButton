@@ -18,8 +18,7 @@ The easiest way to use the library is to fetch it directly from Surveypal cdn:
 <script>
 // Build an options object for the library
 var options = {
-	sid: "425114003",
-	key: "U6rX1UmYu8PEfgVFygqHPZxoiFz2FNV-aiAB8WegqDkcvhlSJ2o1zPLh895ExAYE",
+	url = "https://q.surveypal.com/Feedback-survey-v2-eq_Kcj8PWIySQMJf",
 	cssname: "surveypal-button-1.0.2.css"
 };
 
@@ -28,7 +27,7 @@ var options = {
   var s='script',ns='sb',e,n,h="https://srvpleu1data1.blob.core.windows.net/code/";
   e=t.createElement(s);
   e.async=1; 
-  e.src=h+'surveypal-button-1.0.3.js'; 
+  e.src=h+'surveypal-button-1.0.4.js'; 
   w[ns]=w[ns]||{};
   w[ns].o=o;
   w[ns].h=h;
@@ -43,8 +42,7 @@ You can specify where the library is fetched from. In the example below, the the
 ```javascript
 <script>
 var options = {
-  sid: "425114003",
-  key: "U6rX1UmYu8PEfgVFygqHPZxoiFz2FNV-aiAB8WegqDkcvhlSJ2o1zPLh895ExAYE"
+  url = "https://q.surveypal.com/Feedback-survey-v2-eq_Kcj8PWIySQMJf",
 };
 
 (function(w, t, o) {
@@ -66,6 +64,8 @@ var options = {
 
 | Name | Description | Value | Example |
 | --- | --- | --- | --- |
+| url | URL of the survey that's shown | string | `"https://q.surveypal.com/Feedback-survey-v2-eq_Kcj8PWIySQMJf"`. This is recommended way. |
+|  | Or you can add survey ID and survey key |  | This is old way to do it. |
 | sid | [Id](http://surveypal.github.io/SurveypalButton/key_and_id_instructions.html) of the survey that's shown | string | `"425114003"` |
 | key | [Key hash](http://surveypal.github.io/SurveypalButton/key_and_id_instructions.html) of the survey that's shown | string | `"U6rX1UmYu8PEfgVFygqHPZxoiFz2FNVbaiAB8WegqDkcvhlSJ2o1zPLh895ExAYE"` |
 
@@ -73,7 +73,7 @@ var options = {
 
 | Name | Description | Value | Example |
 | --- | --- | --- | --- |
-| answerData | [Predefined answer data](http://surveypal.github.io/SurveypalButton/answerData-instructions.html) for the first page of the survey | object | <code>{p0e0:&nbsp;0, p0e1:&nbsp;"Need_more_cookies!"}</code> |
+| answerData | [Predefined answer data](http://surveypal.github.io/SurveypalButton/answerData-instructions.html) for the first page of the survey | object | <code>{p0e0:&nbsp;0, p0e1:&nbsp;"Need more cookies."}</code> |
 | meta | Metadata added to each response | object | <code>{source_page:&nbsp;"front_page"}</code> |
 | language | Response language | string | `English%20(US)` |
 | source | Surveypal compatible source string | string | `display` |
