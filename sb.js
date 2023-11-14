@@ -203,23 +203,19 @@
 		sb.handle = null;
 	}
 
-	function buildAnswerDataUrlStr(answerDataMap)
-	{
-		return Object.keys(answerDataMap).reduce(function(accumulator, key){
-			return accumulator + "&" + key + "=" + encodeURIComponent(String(answerDataMap[key]));
-		}, "");
-	}
-
 	function enterSurvey() {
 		// change button
 		sb.button.innerHTML = options.texts.LOADING;
 		sb.button.disabled = true;
 
-		// compose url
-		var dataStr = buildAnswerDataUrlStr(options.answerData);
-		var url = dataStr.length > 0 ?
-		          "https://my.surveypal.com/app/form/save?_d=0&_sid=%1&_k=%2".replace("%1", options.sid).replace("%2", options.key) + dataStr :
-		          "https://my.surveypal.com/app/form?_d=0&_sid=%1&_k=%2".replace("%1", options.sid).replace("%2", options.key);
+		// use url, if defined
+		if(options.url) {
+			var url = options.url;
+		}
+		else {
+			var url = "https://my.surveypal.com/app/form?_d=0&_sid=%1&_k=%2".replace("%1", options.sid).replace("%2", options.key);
+		}
+				
 		var keys = Object.keys(metas);
 		if(keys.length > 0) {
 			url = url.replace("/form", "/form/ext");
@@ -231,7 +227,12 @@
 				o.value = metas[key];
 				arr.push(o);
 			}
-			url = url + "&meta=" + JSON.stringify(arr);
+			if(options.url) {
+				url = url + "?meta=" + JSON.stringify(arr);
+			}
+			else{
+				url = url + "&meta=" + JSON.stringify(arr);
+			}
 		}
 
 		// add source, if defined
@@ -247,6 +248,11 @@
 			url = url + "&language=" + options.language;
 		}
 		
+		// add answer data, if defined
+		if(options.answerData) {
+			url = url + "&data=" + JSON.stringify(options.answerData);
+		}
+
 		// show widget
 		console.info(url);
 		switch(options.type) {
